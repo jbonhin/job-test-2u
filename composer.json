@@ -1,0 +1,16 @@
+{
+    "description": "Projeto Job Test 2U",
+    "authors": [
+        {
+            "name": "João Fernando Bonhin Jr",
+            "email": "jbonhin@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Core\\":"core",
+            "App\\":"app"
+        }   
+    },
+    "require": {}
+}

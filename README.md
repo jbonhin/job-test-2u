@@ -1,5 +1,3 @@
-# job-test-2u
-Teste do processo seletivo Tecnologia 2U 2022
 ### PRINCIPAIS COMENTÁRIOS:
 
 ### Para executar este projeto(teste) em localhost utilizei o recurso Wampserver
