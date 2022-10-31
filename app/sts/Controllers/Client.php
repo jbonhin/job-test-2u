@@ -14,13 +14,35 @@ if (!defined('2u2022out')) {
  */
 
 class Client{
-    private array $dados;
+    /** @var array $data Recebe os dados que devem ser enviados para VIEW */
+    private $data;
+    /** @var array $dataForm Recebe os dados do formulário */
+    private $dataForm;
 
-    public function index() {
-        $list = new \App\sts\Models\StsClient();
-        $this->dados['customers'] = $list->index();
+    public function index(): void {
+
+        $this->dataForm = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+        if (!empty($this->dataForm['CreateNewClint'])) {
+
+            unset($this->dataForm['CreateNewClint']);
+            $createNewClint = new \App\sts\Models\StsClient();
+
+            if ($createNewClint->create($this->dataForm)){
+
+            } else {
+                $this->data['form'] = $this->dataForm;
+            }
+        }
+
+        //$list = new \App\sts\Models\StsClient();
+        //$this->dados['customers'] = $list->index();
+        //$this->dados = [];
         
-        $carregarView = new \Core\ConfigView("sts/Views/client/client", $this->dados);
+        //$carregarView = new \Core\ConfigView("sts/Views/client/client", $this->dados);
+
+        $carregarView = new \Core\ConfigView("sts/Views/client/client", $this->data);
         $carregarView->renderizar();
     }
+
 }

@@ -30,7 +30,7 @@ class Config {
         
         define('CONTROLLER', 'Home');
         define('METODO', 'index');
-        define('CONTROLLERERRO', 'Erro');
+        define('CONTROLLERERRO', 'Error');
 
         //Credencias de acesso ao Banco de dados
         define('HOST', 'localhost');
