@@ -17,14 +17,14 @@ class ConfigView
     /** @var string $nome Recebe o endereço da VIEW que deve ser carregada */
     private string $nome;
     /** @var array $dados Recebe os dados que a VIEW deve receber */
-    private array $dados;
+    private $dados;
     
     /**
      * Receber o endereço da VIEW e os dados.
      * @param string $nome Endereço da VIEW que deve ser carregada
      * @param array $dados Dados que a VIEW deve receber.
      */
-    public function __construct($nome, array $dados){
+    public function __construct($nome, $dados){
         $this->nome = $nome;
         $this->dados = $dados;
         //echo "Carregar a View: ". $this->nome ."<br>";

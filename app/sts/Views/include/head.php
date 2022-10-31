@@ -8,7 +8,7 @@ if (!defined('2u2022out')) {
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Teste</title>
 </head>
 <body>

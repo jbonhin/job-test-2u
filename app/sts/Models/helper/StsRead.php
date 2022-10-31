@@ -18,12 +18,26 @@ if (!defined('2u2022out')) {
 use PDO;
 
 class StsRead extends StsConn{
+
+    /** @var string $select Recebe o QUERY */
     private string $select;
+
+    /** @var array $values Recebe os valores que deve ser atribuidos nos link da QUERY com bindValue */
     private array $values = [];
+
+    /** @var array $result Recebe os registros do banco de dados e retorna para a Models */
     private array $result = [];
+
+    /** @var object $query Recebe a QUERY preparada */
     private object $query;
+
+    /** @var object $conn Recebe a QUERY preparada */
     private object $conn;
     
+    /**
+     * 
+     * @return array Retorna o array de dados
+     */
     function getResult(): array {
         return $this->result;
     }

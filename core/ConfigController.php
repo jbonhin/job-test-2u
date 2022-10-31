@@ -28,6 +28,8 @@ class ConfigController extends Config
     private string $urlSlugController;
     /** @var array $format Recebe o array de caracteres especiais que devem ser substituido */
     private array $format;
+    /** @var string $classe Recebe a classe */
+    private string $classe;
 
     /**
      * Receber a URL do .htaccess.
@@ -49,7 +51,7 @@ class ConfigController extends Config
             if (isset($this->urlConjunto[0])) {
                 $this->urlController = $this->slugController($this->urlConjunto[0]);
             } else {
-                $this->urlController = CONTROLLER;
+                $this->urlController = $this->slugController(CONTROLLER);
             }
             
             if(isset($this->urlConjunto[1])){
@@ -58,10 +60,9 @@ class ConfigController extends Config
                 $this->urlParamentro = "";
             }
         }else{
-            $this->urlController = CONTROLLER;
+            $this->urlController = $this->slugController(CONTROLLER);
             $this->urlParamentro = "";
         }
-        //echo "Controller: {$this->urlController} - Paramentro: {$this->urlParamentro}<br>";
     }
 
     /**
@@ -83,10 +84,10 @@ class ConfigController extends Config
     }
     
     /**
-     * Converter o valor obtido da URL "sobre-empresa" e converter no formato da classe "SobreEmpresa".
+     * Converter o valor obtido da URL "client" e converter no formato da classe "Client".
      * Utilizado as funções para converter tudo para minúsculo, converter o traço pelo espaço, converter cada letra da primeira palavra para maiúsculo, retirar os espaços em branco
      * @param string $slugController Nome da classe
-     * @return string Retorna a controller "sobre-empresa" convertido para o nome da Classe "SobreEmpresa"
+     * @return string Retorna a controller "client" convertido para o nome da Classe "Client"
      */    
     private function slugController($slugController) {
         //Converter para minusculo
@@ -100,16 +101,35 @@ class ConfigController extends Config
         return $this->urlSlugController;
     }
     
-    /**     * 
-     * Carregar as Controllers.
-     * Instanciar as classes da controller e carregar o método index.
+    /**  
+     * Verificar se a classe existe.
+     * Não existindo a classe atribuir a classe erro
      * 
      * @return void
      */
-    public function carregar() {
-        $classe = "\\App\\sts\\Controllers\\" . $this->urlController;
-        $classeCarregar = new $classe();
-        $classeCarregar->index();
+    public function carregar(): void {
+        $this->classe = "\\App\\sts\\Controllers\\" . $this->urlController;
+        if(class_exists($this->classe)){
+            $this->carregarClasse();
+        }else{
+            $this->urlController = $this->slugController(CONTROLLERERRO);
+            $this->carregar();
+        }
+    }
+    
+    /**  
+     * Verificar se o método existe, existindo o método carrega a página;
+     * Não existindo o método, para o carregamento e apresenta mensagem de erro.
+     * 
+     * @return void
+     */    
+    private function carregarClasse(): void {
+        $classeCarregar = new $this->classe();
+        if(method_exists($classeCarregar, "index")){
+            $classeCarregar->index();
+        }else{
+            die('Erro: Por favor tente novamente. Caso o problema persista, entre em contato o administrador ' . EMAILADM . '<br>');
+        }
     }
 
 }
