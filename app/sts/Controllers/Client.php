@@ -8,7 +8,7 @@ if (!defined('2u2022out')) {
 }
 
 /**
- * Description of StsAbout
+ * Description of Client
  *
  * @author jbonhin
  */
@@ -17,12 +17,10 @@ class Client{
     private array $dados;
 
     public function index() {
-        $client = new \App\sts\Models\StsClient();
-        $client->index();
+        $list = new \App\sts\Models\StsClient();
+        $this->dados['customers'] = $list->index();
         
-        $this->dados = [];
         $carregarView = new \Core\ConfigView("sts/Views/client/client", $this->dados);
-        
         $carregarView->renderizar();
     }
 }

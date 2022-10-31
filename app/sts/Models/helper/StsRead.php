@@ -29,15 +29,28 @@ class StsRead extends StsConn{
     }
     
     public function exeRead($table, $terms = null, $parseString = null) {
-        echo $parseString . "<br>";
         if (!empty($parseString)) {
             parse_str($parseString, $this->values);
-            var_dump($this->values);
         }
         $this->select = "SELECT * FROM {$table} {$terms}";
-        echo "Read" . "<br>";
         $this->exeInstruction();
-        var_dump($this->query);
+    }
+    
+    public function fullRead($sql) {
+        $where = "";   
+        $query = "SELECT {$sql["columns"]} FROM {$sql["table"]} {$sql["orderBy"]} {$sql["order"]} {$sql["limit"]} ";
+        
+        if (!empty($sql["where"])) {
+            $where = "WHERE {$sql["where"]} ";
+            $query = "SELECT "
+                    . "{$sql["columns"]} "
+                    . "FROM {$sql["table"]} {$where} {$sql["orderBy"]} "
+                    . "{$sql["order"]}";
+        } else {
+            
+        }
+        $this->select = $query;        
+        $this->exeInstruction();
     }
     
     private function exeInstruction() {

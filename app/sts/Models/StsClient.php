@@ -1,10 +1,5 @@
 <?php
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/PHPClass.php to edit this template
- */
-
 namespace App\sts\Models;
 
 if (!defined('2u2022out')) {
@@ -12,24 +7,29 @@ if (!defined('2u2022out')) {
     die("Erro: Página não encontrada!");
 }
 
-//use PDO;
 
 /**
  * Description of StsClient
  *
- * @author jbonh
+ * @author jbonhin
  */
 class StsClient {
 
     //private object $connection;
     
     public function index(){
-        $table = "customers";
-        $terms = "WHERE id=:id LIMIT :limit";
-        $parseString = "id=1&limit=5";
+        $sql = [
+            "columns" => "* ",
+            "table" => "customers ",
+            "where" => "",
+            "limit" => "",
+            "orderBy" => "ORDER BY name ",
+            "order" => "DESC",
+        ]; 
         
         $listCustomers = new \App\sts\Models\helper\StsRead();
-        $listCustomers->exeRead($table, $terms, $parseString);
-        var_dump($listCustomers->getResult());
+        $listCustomers->fullRead($sql);
+        
+        return $listCustomers->getResult();
     }
 }

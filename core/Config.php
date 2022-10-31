@@ -7,8 +7,24 @@ if (!defined('2u2022out')) {
     die("Erro: Página não encontrada!");
 }
 
+/**
+ * Configurações básicas do site.
+ *
+ * @author jbonhin
+ */
+
 
 class Config {
+
+    /**
+     * Possui as constantes com as configurações.
+     * Configurações de endereço do projeto.
+     * Página principal do projeto.
+     * Credenciais de acesso ao banco de dados
+     * E-mail do administrador.
+     * 
+     * @return void
+     */
     protected function config(){
         define('URL', 'http://localhost/sts/test/site/');
         

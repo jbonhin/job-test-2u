@@ -5,6 +5,11 @@ if (!defined('2u2022out')) {
     die("Erro: Página não encontrada!");
 }
 
-echo "<h1>View da Página Cliente</h1>";
-
-var_dump($this->dados['customers']);
+/**
+ * Description of newClient
+ *
+ * @author jbonhin
+ */
+class newClient {
+    //put your code here
+}
