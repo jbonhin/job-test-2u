@@ -1,5 +1,3 @@
-# job-test-2u
-Teste do processo seletivo Tecnologia 2U 2022
 ### PRINCIPAIS COMENTÁRIOS:
 
 ### Para executar este projeto(teste) em localhost utilizei o recurso Wampserver
@@ -35,7 +33,8 @@ composer update
     2) Executar no prompt dentro do diretório do projeto
         > composer dumpautoload    
 
-### Após executar o update verá quer foi criado a pasta /vendor. Nada deverá ser alterado na pasta ./vendor, sendo assim mantendo a integridade do site.
+### Após executar o update verá quer foi criado a pasta /vendor. Nada deverá ser
+### alterado na pasta ./vendor, sendo assim mantendo a integridade do site.
 
 ### Criar na raiz do projeto o arquivo:
 . htaccess
@@ -56,3 +55,6 @@ composer update
 core/config.php
     arquivo de configuração básica
 
+### DOCUMENTAÇÂO DO PROJETO
+Os scripts foram parcialmente documentados utilizando as boas práticas do PSR
+PSR-5: PHPDoc e PSR-19: PHPDoc tags.
