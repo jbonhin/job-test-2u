@@ -45,16 +45,23 @@ class StsClient {
     {
         $this->data = $data;
         $this->data['created'] = date("Y-m-d H:i:s");
-
+/*
         $zipCode = $this->busca_cep($this->data['zip_code']);
 
         if(!empty($zipCode)){
-            $this->data['address'] = $zipCode['tipo_logradouro'] ." ". $zipCode['logradouro'];
-            $this->data['district'] = $zipCode['bairro'];
-            $this->data['city'] = $zipCode['cidade'];
-            $this->data['fu'] = $zipCode['uf'];
+            if(!empty($zipCode['cidade']) && !empty($zipCode['uf'])){ 
+                
+                $this->data['address'] = $zipCode['tipo_logradouro'] ." ". $zipCode['logradouro'];
+                $this->data['district'] = $zipCode['bairro'];
+                $this->data['city'] = $zipCode['cidade'];
+                $this->data['fu'] = $zipCode['uf'];
+                
+            } else {
+                $_SESSION['msg'] = "CEP Inválido!";
+                return false;
+            }
         }
-
+*/
         $createNewClient = new \App\sts\Models\helper\StsCreate();
         $createNewClient->exeCreate("customers", $this->data);
 

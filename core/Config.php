@@ -39,6 +39,6 @@ class Config {
         define('DBNAME', 'job_test_2u');
         define('PORT', 3306);
         
-        define('EMAILADM', 'jfbonhin@gmail.com');
+        define('EMAILADM', 'jbonhin@gmail.com');
     }
 }

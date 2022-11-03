@@ -29,7 +29,7 @@ class Client{
             $createNewClint = new \App\sts\Models\StsClient();
 
             if ($createNewClint->create($this->dataForm)){
-
+                $this->data['form'] = $this->dataForm;
             } else {
                 $this->data['form'] = $this->dataForm;
             }
