@@ -26,7 +26,7 @@ class Config {
      * @return void
      */
     protected function config(){
-        define('URL', 'http://localhost/sts/test/site/');
+        define('URL', 'http://localhost/2U/job-test-2u/');
         
         define('CONTROLLER', 'Home');
         define('METODO', 'index');
@@ -39,6 +39,6 @@ class Config {
         define('DBNAME', 'job_test_2u');
         define('PORT', 3306);
         
-        define('EMAILADM', 'jfbonhin@gmail.com');
+        define('EMAILADM', 'jbonhin@gmail.com');
     }
 }

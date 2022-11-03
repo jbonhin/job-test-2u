@@ -39,6 +39,7 @@ class ConfigView
     public function renderizar(){
         if(file_exists('app/' . $this->nome . '.php')){
             include 'app/sts/Views/include/head.php';
+            include 'app/sts/Views/include/menu.php';
             include 'app/'. $this->nome .".php";
             include 'app/sts/Views/include/footer.php';
         } else {

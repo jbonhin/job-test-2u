@@ -25,7 +25,7 @@ class Error
      */
     public function index(): void {
         $this->dados = [];
-        $carregarView = new \Core\ConfigView("sts/Views/erro/erro", $this->dados);
+        $carregarView = new \Core\ConfigView("sts/Views/error/error", $this->dados);
         $carregarView->renderizar();
     }
 }

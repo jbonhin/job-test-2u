@@ -29,18 +29,12 @@ class Client{
             $createNewClint = new \App\sts\Models\StsClient();
 
             if ($createNewClint->create($this->dataForm)){
-
+                $this->data['form'] = $this->dataForm;
             } else {
                 $this->data['form'] = $this->dataForm;
             }
         }
-
-        //$list = new \App\sts\Models\StsClient();
-        //$this->dados['customers'] = $list->index();
-        //$this->dados = [];
         
-        //$carregarView = new \Core\ConfigView("sts/Views/client/client", $this->dados);
-
         $carregarView = new \Core\ConfigView("sts/Views/client/client", $this->data);
         $carregarView->renderizar();
     }

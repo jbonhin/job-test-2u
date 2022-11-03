@@ -15,14 +15,7 @@ if (!defined('2u2022out')) {
 
 class StsHome 
 {
-    //private object $connection;
-
     public function index(){
-        /*$connection = new \App\sts\Models\helper\StsConn();
-        $this->connection = $connection->connect();
 
-        var_dump($this->connection);*/
-
-        echo "Models: Listar dados da página home <br>";
     }
 }
