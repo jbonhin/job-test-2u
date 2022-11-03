@@ -34,13 +34,7 @@ class Client{
                 $this->data['form'] = $this->dataForm;
             }
         }
-
-        //$list = new \App\sts\Models\StsClient();
-        //$this->dados['customers'] = $list->index();
-        //$this->dados = [];
         
-        //$carregarView = new \Core\ConfigView("sts/Views/client/client", $this->dados);
-
         $carregarView = new \Core\ConfigView("sts/Views/client/client", $this->data);
         $carregarView->renderizar();
     }
