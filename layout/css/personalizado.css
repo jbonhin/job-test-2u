@@ -1,0 +1,94 @@
+
+/* 
+    Created on : 01/11/2022, 20:17:30
+    Author     : jbonhin
+*/
+
+
+/* Definir altura mínima para o menu fixo */
+body {
+    min-height: 45rem;
+    padding-top: 3.5rem;
+    background-color: #002D57;
+}
+.logo{
+    margin: -15px -7px -9px 0;
+}
+
+.descr-top {
+    height: 85vh;
+    color: #fff;
+    margin-bottom: 0rem !important;
+    background-color: #002D57;
+    border-radius: .0rem;
+}
+
+/* Seletor para personalizar o rodapé da página */
+.footer-per{
+    background-color: #090622;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    color: #fff;
+    margin-top: 34px;
+    margin-bottom: 0rem !important;
+    border-radius: 0rem;
+}
+.footer-per ul li a.link-footer{
+    color: #fff !important;
+}
+.footer-per ul li a.link-footer:hover{
+    color: #adaeaf !important;
+    text-decoration: none;
+}
+/* Seletor para personalizar o titulo da página contato*/
+.head-test{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.test{
+    height: 71vh;
+    padding-top: 60px;
+    padding-bottom: 35px;  
+    background-color: #002D57;
+    color: #fff;
+    margin-bottom: 0rem !important;
+    border-radius: 0rem;       
+}
+.test-btn{
+    margin-top: 15px;
+}
+
+.form-btn{
+    margin-top: 2rem;
+}
+.error-top{
+    background-color: #880015;
+    background-repeat: repeat;
+    color: #fff;
+    margin-top: 12rem;
+    margin-bottom: 0rem !important;
+    border-radius: 0rem;       
+}
+
+@media screen and (min-width: 1200px) {
+    .descr-top{
+        height: 85vh;
+        background-image: url('../img/topo.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding-top: 15rem;
+        padding-bottom: 120px;
+    }
+}
+
+.test-list {
+        height: 71vh;
+}
+
+.testes{
+    color: #007BFF;
+    color: #007BFF;
+}
+
+
