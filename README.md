@@ -56,5 +56,17 @@ core/config.php
     arquivo de configuração básica
 
 ### DOCUMENTAÇÂO DO PROJETO
-Os scripts foram parcialmente documentados utilizando as boas práticas do PSR
+. Os scripts foram parcialmente documentados utilizando as boas práticas do PSR
 PSR-5: PHPDoc e PSR-19: PHPDoc tags.
+. a pasta layout contém o modelo do projeto em html, css e bootstrap
+
+### GitHub do Projeto
+https://github.com/jbonhin/job-test-2u.git
+
+### Mais detalhes
+. Para executar o projeto foi utilizado o WampServer
+. A pasta database contém os dumps do banco em phpmyadim e workbench em suas pastas respectivas.
+
+### Cadastrar novo cliente
+. Ao digitar o CEP basta utilizar o tab para que os campos Endereço, Bairro, Cidade e Estado seram 
+preenchidos automaticamente desde que o mesmo esteja válido.
